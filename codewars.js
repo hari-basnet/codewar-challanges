@@ -75,3 +75,17 @@ function findShort(s) {
 function findShort(s) {
     return Math.min.apply(null, s.split(' ').map(w => w.length));
 }
+
+
+// check if the given value is empty or not 
+const isEmpty = value => {
+    return (
+        value === null ||
+        value === undefined ||
+        (typeof value === 'string' && value.trim().length === 0) ||
+        (typeof value === 'object' && Object.keys(value).length === 0)
+    )
+}
+
+
+console.log(isEmpty(88));
