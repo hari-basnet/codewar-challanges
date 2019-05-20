@@ -89,3 +89,22 @@ const isEmpty = value => {
 
 
 console.log(isEmpty(88));
+
+// Complete the findNextSquare method that finds the next integral perfect square after the one passed as a parameter. Recall that an integral perfect square is an integer n such that sqrt(n) is also an integer.
+
+// If the parameter is itself not a perfect square, than -1 should be returned. You may assume the parameter is positive.
+
+function findNextSquare(sq) {
+    // Return the next square if sq if a perfect square, -1 otherwise
+    let squared = Math.sqrt(sq);
+    let nextPerfectSquare;
+    console.log(squared)
+
+    if (Number.isInteger(squared)) {
+        nextPerfectSquare = (squared + 1) ** 2;
+        return nextPerfectSquare;
+    }
+    return -1;
+}
+
+console.log(findNextSquare(16))
