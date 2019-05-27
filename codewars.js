@@ -110,16 +110,56 @@ function findNextSquare(sq) {
 console.log(findNextSquare(16))
 
 
+// game logic 
+// creating a fighter constructor 
 
+function Fighter(name, health, damagePerAttack) {
+    this.name = name;
+    this.health = health;
+    this.damagePerAttack = damagePerAttack;
+    this.toString = function () { return this.name; }
+}
 
 function declareWinner(fighter1, fighter2, firstAttacker) {
-  var fac1 = Math.ceil( fighter1.health / fighter2.damagePerAttack );
-  var fac2 = Math.ceil( fighter2.health / fighter1.damagePerAttack );
-  if(fac1 < fac2) {
-    return fighter2.name;
-  } else if(fac2 < fac1) {
-    return fighter1.name;
-  } else {
-    return firstAttacker;
-  }
+    var fac1 = Math.ceil(fighter1.health / fighter2.damagePerAttack);
+    var fac2 = Math.ceil(fighter2.health / fighter1.damagePerAttack);
+    if (fac1 < fac2) {
+        return fighter2.name;
+    } else if (fac2 < fac1) {
+        return fighter1.name;
+    } else {
+        return firstAttacker;
+    }
 }
+
+/* console.log(declareWinner(new Fighter("Lew", 10, 2), new Fighter("Harry", 5, 4), "Lew")); //, "Lew"
+console.log(declareWinner(new Fighter("Lew", 10, 2), new Fighter("Harry", 5, 4), "Harry")); //, "Harry"
+console.log(declareWinner(new Fighter("Harald", 20, 5), new Fighter("Harry", 5, 4), "Harry")); //, "Harald"
+console.log(declareWinner(new Fighter("Harald", 20, 5), new Fighter("Harry", 5, 4), "Harald")); //, "Harald"
+console.log(declareWinner(new Fighter("Jerry", 30, 3), new Fighter("Harald", 20, 5), "Jerry")); //, "Harald"
+console.log(declareWinner(new Fighter("Jerry", 30, 3), new Fighter("Harald", 20, 5), "Harald")); //, "Harald"*/
+
+function deleteNth(arr, n) {
+    // ...
+    let resultArray = []
+    let count = 0;
+    let i = 0
+    // for (i = 0; i < arr.length; i++) {
+    //     console.log(arr.indexOf(arr[i]) !== -1)
+    //     if (arr.indexOf(arr[i]) !== -1) {
+    //         count = count + 1
+    //     }
+    //     if (count <= n) {
+    //         resultArray.push(arr[i])
+    //     }
+    //     return resultArray;
+    // }
+
+    // const newArray = arr.filter((value, index) => {
+    //     return indexOf(value) <= n
+    // })
+
+    // console.log(newArray)
+}
+
+console.log(deleteNth([1, 1, 1, 1], 2))
