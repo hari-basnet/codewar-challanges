@@ -144,16 +144,6 @@ function deleteNth(arr, n) {
     let resultArray = []
     let count = 0;
     let i = 0
-    // for (i = 0; i < arr.length; i++) {
-    //     console.log(arr.indexOf(arr[i]) !== -1)
-    //     if (arr.indexOf(arr[i]) !== -1) {
-    //         count = count + 1
-    //     }
-    //     if (count <= n) {
-    //         resultArray.push(arr[i])
-    //     }
-    //     return resultArray;
-    // }
 
     // const newArray = arr.filter((value, index) => {
     //     return indexOf(value) <= n
