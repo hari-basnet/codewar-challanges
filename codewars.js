@@ -139,17 +139,54 @@ console.log(declareWinner(new Fighter("Harald", 20, 5), new Fighter("Harry", 5, 
 console.log(declareWinner(new Fighter("Jerry", 30, 3), new Fighter("Harald", 20, 5), "Jerry")); //, "Harald"
 console.log(declareWinner(new Fighter("Jerry", 30, 3), new Fighter("Harald", 20, 5), "Harald")); //, "Harald"*/
 
-function deleteNth(arr, n) {
-    // ...
-    let resultArray = []
-    let count = 0;
-    let i = 0
+// function deleteNth(arr, n) {
+//     // ...
+//     let resultArray = []
+//     let count = 0;
+//     let i = 0
 
-    // const newArray = arr.filter((value, index) => {
-    //     return indexOf(value) <= n
-    // })
+//     const newArray = arr.filter((value, index) => {
+//         return indexOf(value) <= n
+//     })
 
-    // console.log(newArray)
+//     console.log(newArray)
+// }
+
+// console.log(deleteNth([1, 1, 1, 1], 2))
+
+
+// Interview question 
+
+// Create a function that takes two or more arrays and returns an array of the symmetric difference (△or ⊕) of the provided arrays.
+
+
+function sym() {
+    var args = [];
+
+    for (var i = 0; i < arguments.length; i++) {
+        args.push(arguments[i]);
+    }
+
+    function symDiff(arrayOne, arrayTwo) {
+        var result = [];
+
+        arrayOne.forEach(function (item) {
+            if (arrayTwo.indexOf(item) < 0 && result.indexOf(item) < 0) {
+                result.push(item);
+            }
+        });
+
+        arrayTwo.forEach(function (item) {
+            if (arrayOne.indexOf(item) < 0 && result.indexOf(item) < 0) {
+                result.push(item);
+            }
+        });
+
+        return result;
+    }
+
+    // Apply reduce method to args array, using the symDiff function
+    return args.reduce(symDiff);
 }
 
-console.log(deleteNth([1, 1, 1, 1], 2))
+console.log(sym([1, 2, 3], [5, 2, 1, 4]))
