@@ -160,6 +160,33 @@ console.log(declareWinner(new Fighter("Jerry", 30, 3), new Fighter("Harald", 20,
 // Create a function that takes two or more arrays and returns an array of the symmetric difference (△or ⊕) of the provided arrays.
 
 
+
+function sumAll(...args) {
+
+    // for (let i = 0; i < arguments.length; i++) {
+    // console.log(arguments[i])
+    //}
+
+    console.log(args)
+}
+
+sumAll(1, 2, 3)
+
+const nums = [1, 2, 3, 4, 5]
+
+const addNumbers = (a, b) => {
+
+    return a + b
+
+}
+
+const sum = nums.reduce(addNumbers)
+
+console.log(sum)
+
+
+
+
 function sym() {
     var args = [];
 
@@ -168,6 +195,7 @@ function sym() {
     }
 
     function symDiff(arrayOne, arrayTwo) {
+        console.log(arrayOne)
         var result = [];
 
         arrayOne.forEach(function (item) {
@@ -189,4 +217,5 @@ function sym() {
     return args.reduce(symDiff);
 }
 
-console.log(sym([1, 2, 3], [5, 2, 1, 4]))
+//console.log(sym([1, 2, 3], [5, 2, 1, 4]))
+console.log(sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]))
