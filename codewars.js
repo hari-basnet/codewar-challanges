@@ -219,3 +219,68 @@ function sym() {
 
 //console.log(sym([1, 2, 3], [5, 2, 1, 4]))
 console.log(sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]))
+
+
+// Compare and update the inventory stored in a 2D array against a second 2D array of a fresh delivery. Update the current existing inventory ////// item quantities (in arr1). If an item cannot be found, add the new item and quantity into the inventory array. The returned inventory array // // should be in alphabetical order by item.
+
+function updateInventory(arr1, arr2) {
+    // All inventory must be accounted for or you're fired!
+    let index;
+    let oldItemNames = []
+    let newItemNames = []
+
+    // if name of the new inventory matches update the number of items
+    arr1.map((item1) => {
+
+        return arr2.map((item2) => {
+            if (item1[1] === item2[1]) {
+                item1[0] = item1[0] + item2[0]
+            }
+        })
+    })
+
+    // now we need to check if the item exists in the inventory
+
+    // get the name in arr1
+    arr1.map((item) => {
+        oldItemNames.push(item[1])
+    })
+
+    // get the names in arr2
+    arr2.map((item) => {
+        newItemNames.push(item[1])
+    })
+
+    // check if the names of new inventory match old 
+    newItemNames.map((name) => {
+        if (oldItemNames.indexOf(name) === -1) {
+            index = newItemNames.indexOf(name)
+            arr1.push(arr2[index])
+        }
+    })
+
+    // sort the old inventory according the name 
+
+    arr1.sort((a, b) => {
+        return a[1] > b[1] ? 1 : -1
+    })
+
+    return arr1;
+}
+
+// Example inventory lists
+var curInv = [
+    [21, "Bowling Ball"],
+    [2, "Dirty Sock"],
+    [1, "Hair Pin"],
+    [5, "Microphone"]
+];
+
+var newInv = [
+    [2, "Hair Pin"],
+    [3, "Half-Eaten Apple"],
+    [67, "Bowling Ball"],
+    [7, "Toothpaste"]
+];
+
+console.log(updateInventory(curInv, newInv));
