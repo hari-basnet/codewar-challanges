@@ -284,3 +284,25 @@ var newInv = [
 ];
 
 console.log(updateInventory(curInv, newInv));
+
+
+// Bubble sort 
+
+function bubbleSort(array) {
+    // change code below this line
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array.length - 1 - i; j++) {
+
+            if (array[j] > array[j + 1]) [array[j], array[j + 1]] = [array[j + 1], array[j]]
+
+        }
+
+        // change code above this line
+    }
+    return array;
+}
+
+//testing 
+let randi = [2, 5, 3, 4, 1]
+let test = [1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92];
+console.log(bubbleSort(test))
