@@ -289,15 +289,13 @@ console.log(updateInventory(curInv, newInv));
 // Bubble sort 
 
 function bubbleSort(array) {
-    // change code below this line
+
     for (let i = 0; i < array.length; i++) {
-        for (let j = 0; j < array.length - 1 - i; j++) {
-
-            if (array[j] > array[j + 1]) [array[j], array[j + 1]] = [array[j + 1], array[j]]
-
+        for (let j = 0; j < array.length - 1 - i; j++) {  // i because the largest element will be bubbled at the end so we dont have to compare
+            if (array[j] > array[j + 1]) {
+                [array[j], array[j + 1]] = [array[j + 1], array[j]] // swapping the first and last 
+            }
         }
-
-        // change code above this line
     }
     return array;
 }
